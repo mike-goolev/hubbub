@@ -7,11 +7,5 @@
       <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
       <jdbc-url>jdbc:derby:$USER_HOME$/derby/bookstore</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="blaaaaa" uuid="621be852-8ae7-4519-a09f-0284d4f04a61">
-      <driver-ref>derby.embedded</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
-      <jdbc-url>jdbc:derby:$USER_HOME$/derby/bookstore;create=true</jdbc-url>
-    </data-source>
   </component>
 </project>
