@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="FirstDB">
+  <database-model serializer="dbm" dbms="DERBY" family-id="DERBY" format-version="4.16">
+    <root id="1">
+      <ServerVersion>10.14.1.0</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="APP">
+      <Current>1</Current>
+    </schema>
+    <schema id="3" parent="1" name="NULLID"/>
+    <schema id="4" parent="1" name="SQLJ"/>
+    <schema id="5" parent="1" name="SYS"/>
+    <schema id="6" parent="1" name="SYSCAT"/>
+    <schema id="7" parent="1" name="SYSCS_DIAG"/>
+    <schema id="8" parent="1" name="SYSCS_UTIL"/>
+    <schema id="9" parent="1" name="SYSFUN"/>
+    <schema id="10" parent="1" name="SYSIBM"/>
+    <schema id="11" parent="1" name="SYSPROC"/>
+    <schema id="12" parent="1" name="SYSSTAT"/>
+    <table id="13" parent="2" name="COMMENTS"/>
+    <table id="14" parent="2" name="POSTS"/>
+    <table id="15" parent="2" name="PROFILES"/>
+    <table id="16" parent="2" name="USERS"/>
+    <column id="17" parent="13" name="AUTHOR">
+      <Position>1</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="13" name="TARGET">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="13" name="COMMENT">
+      <Position>3</Position>
+      <DataType>VARCHAR(70)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="13" name="COMMENTED">
+      <Position>4</Position>
+      <DataType>TIMESTAMP|93s</DataType>
+      <DefaultExpression>CURRENT TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="21" parent="13" name="ID">
+      <Position>5</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>AUTOINCREMENT: start 1 increment 1</DefaultExpression>
+    </column>
+    <index id="22" parent="13" name="SQL191106001910730">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="23" parent="13" name="SQL191106001910731">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>AUTHOR</ColNames>
+    </index>
+    <index id="24" parent="13" name="SQL191106001910732">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TARGET</ColNames>
+    </index>
+    <key id="25" parent="13" name="PK_COMMENTS">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="26" parent="13" name="FK_COMMENT_AUTHOR">
+      <ColNames>AUTHOR</ColNames>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>PK_USERS</RefKeyName>
+      <RefColNames>USERNAME</RefColNames>
+    </foreign-key>
+    <foreign-key id="27" parent="13" name="FK_COMMENT_TARGET">
+      <ColNames>TARGET</ColNames>
+      <RefTableName>POSTS</RefTableName>
+      <RefKeyName>PK_POSTS</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="28" parent="14" name="CONTENT">
+      <Position>1</Position>
+      <DataType>VARCHAR(140)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="14" name="AUTHOR">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="14" name="POSTED">
+      <Position>3</Position>
+      <DataType>TIMESTAMP|93s</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="31" parent="14" name="ID">
+      <Position>4</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>AUTOINCREMENT: start 1 increment 1</DefaultExpression>
+    </column>
+    <index id="32" parent="14" name="SQL191106001910710">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="33" parent="14" name="SQL191106001910711">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>AUTHOR</ColNames>
+    </index>
+    <key id="34" parent="14" name="PK_POSTS">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="14" name="FK_POST_AUTHOR">
+      <ColNames>AUTHOR</ColNames>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>PK_USERS</RefKeyName>
+      <RefColNames>USERNAME</RefColNames>
+    </foreign-key>
+    <column id="36" parent="15" name="FIRSTNAME">
+      <Position>1</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+    </column>
+    <column id="37" parent="15" name="LASTNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+    </column>
+    <column id="38" parent="15" name="EMAIL">
+      <Position>3</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <column id="39" parent="15" name="TIMEZONE">
+      <Position>4</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="40" parent="15" name="BIOGRAPHY">
+      <Position>5</Position>
+      <DataType>VARCHAR(512)|12s</DataType>
+    </column>
+    <column id="41" parent="15" name="AVATAR">
+      <Position>6</Position>
+      <DataType>BLOB(204800)|2004s</DataType>
+    </column>
+    <column id="42" parent="15" name="MIME">
+      <Position>7</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+    </column>
+    <column id="43" parent="15" name="ID">
+      <Position>8</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>AUTOINCREMENT: start 1 increment 1</DefaultExpression>
+    </column>
+    <index id="44" parent="15" name="SQL191106001910670">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="15" name="PK_PROFILES">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="16" name="USERNAME">
+      <Position>1</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="16" name="PASSHASH">
+      <Position>2</Position>
+      <DataType>CHAR(55)|1s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="16" name="JOINED">
+      <Position>3</Position>
+      <DataType>DATE|91s</DataType>
+      <DefaultExpression>CURRENT_DATE</DefaultExpression>
+    </column>
+    <column id="49" parent="16" name="PROFILE">
+      <Position>4</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="50" parent="16" name="SQL191106001910680">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>USERNAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="51" parent="16" name="SQL191106001910681">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PROFILE</ColNames>
+    </index>
+    <key id="52" parent="16" name="PK_USERS">
+      <ColNames>USERNAME</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="16" name="FK_USER_PROFILE">
+      <ColNames>PROFILE</ColNames>
+      <RefTableName>PROFILES</RefTableName>
+      <RefKeyName>PK_PROFILES</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

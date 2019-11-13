@@ -20,37 +20,61 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="javax.servlet:jstl:1.2" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - Bean Validation" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - CDI: Contexts and Dependency Injection" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - Connector Architecture (JSR 322)" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - EJB" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - Javaee Security" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - JSF" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - JSON Binding" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - JSON Processing (JSR 353)" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - RESTful Web Service" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - Transaction API (JSR 907)" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5.0.0 - WebSocket" level="application_server_libraries" />
-    <orderEntry type="module-library" exported="" scope="PROVIDED">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$args$/HashTool-1.0/commons-codec-1.13.jar!/" />
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/HikariCP-2.6.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="" scope="PROVIDED">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$args$/HashTool-1.0/hashtool-1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/commons-codec-1.13.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES>
-          <root url="jar://$args$/HashTool-1.0/hashtool-1.0-src.jar!/" />
-        </SOURCES>
+        <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/derby.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/hashtool-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/slf4j-api-1.7.25.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/slf4j-simple-1.7.25.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="javax.servlet:jstl:1.1.2" level="project" />
   </component>
 </module>

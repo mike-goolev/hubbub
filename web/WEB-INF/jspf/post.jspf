@@ -1,0 +1,26 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<div class="w3-card-4" style="margin-bottom:34px">
+    <header class="w3-container w3-light-gray">
+            <span>
+                Posted by
+                <c:choose>
+                <c:when test="${not empty user}">
+                    <a href="main?action=profile&for=${post.author}">${post.author}</a>
+                </c:when>
+                <c:otherwise>${post.author}</c:otherwise>
+                </c:choose>
+            </span>
+            <span class="w3-right-align hubbubred">
+                ${post.posted}
+            </span>
+    </header>
+    <div class="w3-container">
+        <p>${post.content}</p>
+    </div>
+    <c:if test="${not empty user and empty param.post}">
+    <p class="w3-margin-left"><a href="main?action=comments&post=${post.id}">View Comments</a></p>
+    </c:if>
+    <footer class="w3-container hubbubtan">
+        <hr/>
+    </footer>
+</div>

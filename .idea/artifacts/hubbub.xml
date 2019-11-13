@@ -9,6 +9,14 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="javax.servlet:jstl:1.2" />
+          <element id="file-copy" path="$args$/glassfish5/javadb/lib/derby.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/HikariCP-2.6.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/commons-codec-1.13.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/derby.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/hashtool-1.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/slf4j-api-1.7.25.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/slf4j-simple-1.7.25.jar" />
+          <element id="library" level="project" name="javax.servlet:jstl:1.1.2" />
         </element>
       </element>
     </root>

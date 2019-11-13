@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 public class ListDAO implements DataService {
     private List<User> users = new ArrayList<>();
     private List<Post> posts = new ArrayList<>();
+    private List<Profile> profiles = new ArrayList<>();
+    private List<Comment> comments = new ArrayList<>();
 
     @Override
     public synchronized User addUser(UserDTO bean) {
@@ -18,7 +20,10 @@ public class ListDAO implements DataService {
         if (this.userExists(bean.getUsername()))
             throw new IllegalArgumentException("Username " + bean.getUsername() + " is unavailable");
         String hash = HashTool.hash(bean.getPassword());
-        User user = new User(bean.getUsername(), hash);
+        Profile profile = new Profile();
+        profile.setId(profile.hashCode());
+        profiles.add(profile);
+        User user = new User(bean.getUsername(), hash, profile);
         users.add(user);
         return user;
     }
@@ -50,16 +55,19 @@ public class ListDAO implements DataService {
 
     @Override
     public synchronized Post addPost(String content, User author) {
-        content = content
-                .replace("<", "&lt;")
-                .replace(">", "&gt;")
-                .replace("'", "&apos;")
-                .replace("\"", "&quot;")
-                .replace("%", "&#37;");
+        content = sanitize(content);
         Post post = new Post(content, author);
         author.getPosts().add(post);
         posts.add(post);
         return post;
+    }
+
+    @Override
+    public Post findPostById(int id) {
+        for (Post p : posts)
+            if (p.getId() == id)
+                return p;
+        return null;
     }
 
     @Override
@@ -71,4 +79,35 @@ public class ListDAO implements DataService {
                 .limit(limit)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public boolean updateProfileFor(User user, Profile changed) {
+        if (!changed.isValid()) return false;
+        user.getProfile().setFirstName(changed.getFirstName());
+        user.getProfile().setLastName(changed.getLastName());
+        user.getProfile().setEmail(changed.getEmail());
+        user.getProfile().setTimeZone(changed.getTimeZone());
+        if (changed.getBiography() != null)
+            user.getProfile().setBiography(sanitize(changed.getBiography()));
+        return true;
+    }
+
+    @Override
+    public Comment addComment(User author, Post target, String content) {
+        content = sanitize(content);
+        Comment comment = new Comment(author, target, content);
+        comments.add(comment);
+        target.getComments().add(comment);
+        return comment;
+    }
+
+    private String sanitize(String input) {
+        return input
+                .replace("<", "&lt;")
+                .replace(">", "&gt;")
+                .replace("'", "&apos;")
+                .replace("\"", "&quot;")
+                .replace("%", "&#37;");
+    }
+
 }

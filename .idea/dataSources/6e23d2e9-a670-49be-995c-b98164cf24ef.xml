@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="bookstore">
-  <database-model serializer="dbm" rdbms="DERBY" format-version="4.9">
+  <database-model serializer="dbm" dbms="DERBY" family-id="DERBY" format-version="4.16">
     <root id="1">
       <ServerVersion>10.14</ServerVersion>
     </root>
     <schema id="2" parent="1" name="APP">
       <Current>1</Current>
-      <Visible>1</Visible>
     </schema>
-    <schema id="3" parent="1" name="NEW_SCHEMA">
-      <Visible>1</Visible>
-    </schema>
+    <schema id="3" parent="1" name="NEW_SCHEMA"/>
     <schema id="4" parent="1" name="NULLID"/>
     <schema id="5" parent="1" name="SQLJ"/>
     <schema id="6" parent="1" name="SYS"/>
@@ -42,12 +39,7 @@
       <Position>4</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="19" parent="14" name="SQL191030021459100">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="20" parent="14" name="SQL191030021459100">
+    <key id="19" parent="14" name="SQL191030021459100">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>

@@ -7,5 +7,11 @@
       <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
       <jdbc-url>jdbc:derby:$USER_HOME$/derby/bookstore</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="FirstDB" uuid="f99efa85-9e53-43a0-8941-9fa3a476b3f0">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:$PROJECT_DIR$/../../glassfish5/javadb/bin/FirstDB</jdbc-url>
+    </data-source>
   </component>
 </project>
