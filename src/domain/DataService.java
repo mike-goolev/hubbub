@@ -1,7 +1,6 @@
 package domain;
 
 import edu.acc.jee.hubbub.UserDTO;
-
 import java.util.List;
 
 public interface DataService {
@@ -14,7 +13,10 @@ public interface DataService {
     Post findPostById(int id);
     List<Post> findPostsByPage(int offset, int limit);
 
+    Profile findProfileById(int id);
     boolean updateProfileFor(User user, Profile changed);
 
     Comment addComment(User user, Post target, String content);
+    Comment findCommentById(int id);
+    List<Comment> findCommentsByPostAndPage(Post target, int offset, int limit);
 }

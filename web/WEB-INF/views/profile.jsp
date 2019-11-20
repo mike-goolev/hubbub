@@ -6,6 +6,7 @@
 <%--@elvariable id="flash" type="java.lang.String"--%>
 <%--@elvariable id="success" type="java.lang.String"--%>
 <%--@elvariable id="timeZones" type="java.util.List"--%>
+<%--@elvariable id="profile" type="domain.Profile"--%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -44,7 +45,7 @@
                 <button class="w3-button w3-margin-right hubbubblue">
                     <a href="main?action=avatar">Upload a new Avatar</a>
                 </button>
-                <c:if test="${user.profile.avatar ne null}">
+                <c:if test="${profile.avatar ne null}">
                     <button class="w3-button w3-margin-left hubbublue">
                         <a href="main?action=revert">Revert to Default Avatar</a>
                     </button>
@@ -60,19 +61,19 @@
                 </c:if>
                 <p>
                     <input class="w3-input w3-light-gray" type="text" ${disabled}
-                       name="firstName" value="${target.profile.firstName}"/>
+                       name="firstName" value="${profile.firstName}"/>
                     <label>First Name</label>
                 </p>
                 <hr/>
                 <p>
                     <input class="w3-input w3-light-gray" type="text" ${disabled}
-                       name="lastName" value="${target.profile.lastName}"/>
+                       name="lastName" value="${profile.lastName}"/>
                     <label>Last Name</label>
                 </p>
                 <hr/>
                 <p>
                     <input class="w3-input w3-light-gray" type="text" ${disabled}
-                       name="email" value="${target.profile.email}"/>
+                       name="email" value="${profile.email}"/>
                     <label>Email</label>
                 </p>
                 <hr/>
@@ -80,7 +81,7 @@
                     <select class="w3-select" ${disabled} name="timeZone">
                         <option value=""></option>
                         <c:forEach var="tz" items="${timeZones}">
-                        <c:set var="selected" value="${tz eq target.profile.timeZone ? 'selected' : ''}"/>
+                        <c:set var="selected" value="${tz eq profile.timeZone ? 'selected' : ''}"/>
                         <option value="${tz}" ${selected}>${tz}</option>
                         </c:forEach>
                     </select>                    
@@ -90,7 +91,7 @@
                 <p>
                     <textarea rows="10" cols="50" name="biography" ${disabled} spellcheck="true"
                         class="w3-input w3-light-gray"
-                        onkeyup="charcountupdate(this.value)">${target.profile.biography}</textarea>
+                        onkeyup="charcountupdate(this.value)">${profile.biography}</textarea>
                     <label>Biography (<span id="charcount"></span> left)</label>
                 </p>
                 <c:if test="${empty disabled}">

@@ -5,38 +5,37 @@ import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Comment implements Serializable {
-    private static final AtomicInteger SEQ = new AtomicInteger(1);
+    private static final AtomicInteger SEQ = new AtomicInteger();
 
-    private User author;
-    private Post target;
+    private String authorName;
+    private int postId;
     private String comment;
-    private Date commented;
-    private Integer id;
+    private Date commented = new Date();
+    private Integer id = SEQ.incrementAndGet();
 
     public Comment() {}
 
-    public Comment(User author, Post target, String comment) {
-        this.author = author;
-        this.target = target;
+    public Comment(String authorName, int postId, String comment) {
+        this.authorName = authorName;
+        this.postId = postId;
         this.comment = comment;
         this.commented = new Date();
-        this.id = SEQ.incrementAndGet();
     }
 
-    public User getAuthor() {
-        return author;
+    public String getAuthorName() {
+        return authorName;
     }
 
-    public void setAuthor(User author) {
-        this.author = author;
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
-    public Post getTarget() {
-        return target;
+    public int getPostId() {
+        return postId;
     }
 
-    public void setTarget(Post target) {
-        this.target = target;
+    public void setPostId(int postId) {
+        this.postId = postId;
     }
 
     public String getComment() {
@@ -65,9 +64,7 @@ public class Comment implements Serializable {
 
     @Override
     public String toString() {
-        return "Comment{" + "author=" + author + ", target=" + target +
+        return "Comment{" + "authorName=" + authorName + ", target=" + postId +
                 ", comment=" + comment + ", id=" + id + '}';
     }
-
-
 }
